@@ -32,5 +32,16 @@ This is a Spring Boot project created to learn the core concepts of the Spring F
 - @Value
 - CommandLineRunner
 
+## Features
+- Create Student
+- Get All Students
+- Get Student by ID
+- Update Student
+- Delete Student
+- DTO (StudentRequest & StudentResponse)
+- Spring Data JPA
+- MySQL Database
+- Layered Architecture (Controller, Service, Repository)
+
 ## Author
 Tushar Pauria
