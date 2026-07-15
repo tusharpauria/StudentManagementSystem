@@ -18,9 +18,6 @@ public class StudentManagementSystemApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(StudentManagementSystemApplication.class, args);
 
-		StudentController controller = context.getBean(StudentController.class);
-		controller.displayStudent();
-
 		College college = context.getBean(College.class);
 		college.displayCollege();
 

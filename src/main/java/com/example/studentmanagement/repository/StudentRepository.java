@@ -1,15 +1,13 @@
 package com.example.studentmanagement.repository;
 
-import com.example.studentmanagement.model.Student;
+import com.example.studentmanagement.entity.Student;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class StudentRepository {
+import java.util.Optional;
 
-    public Student getStudent() {
+public interface StudentRepository extends JpaRepository<Student,Long> {
 
-        return new Student(101, "Tushar", "Spring Boot");
+    Optional<Student> findByEmail(String email);
 
     }
-}
