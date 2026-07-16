@@ -31,6 +31,14 @@ This is a Spring Boot project created to learn the core concepts of the Spring F
 - application.properties
 - @Value
 - CommandLineRunner
+- REST APIs
+- JPA & Hibernate
+- DTO Pattern
+- Validation
+- Exception Handling
+- Spring Profiles
+- YAML Configuration
+- Servlet Filters
 
 ## Features
 - Create Student
@@ -42,6 +50,13 @@ This is a Spring Boot project created to learn the core concepts of the Spring F
 - Spring Data JPA
 - MySQL Database
 - Layered Architecture (Controller, Service, Repository)
+- Global Exception Handling
+- Custom Error Responses
+- Spring Profiles (dev & prod)
+- YAML Configuration
+- Logging Filter
+- Authentication Filter
+- Custom Response Headers
 
 ## Author
 Tushar Pauria
