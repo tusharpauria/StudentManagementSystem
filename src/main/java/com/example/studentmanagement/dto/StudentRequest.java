@@ -1,11 +1,19 @@
 package com.example.studentmanagement.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
 public class StudentRequest {
 
+    @NotBlank(message = "Name cannot be blank")
     private String name;
 
+    @Positive(message = "Age must be greater than 0")
     private int age;
 
+    @Email(message = "Please enter a valid email")
+    @NotBlank(message = "Email cannot be blank")
     private String email;
 
     public StudentRequest(String name, int age, String email) {

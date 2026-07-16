@@ -3,6 +3,7 @@ package com.example.studentmanagement.service;
 import com.example.studentmanagement.dto.StudentRequest;
 import com.example.studentmanagement.dto.StudentResponse;
 import com.example.studentmanagement.entity.Student;
+import com.example.studentmanagement.exception.StudentNotFoundException;
 import com.example.studentmanagement.repository.StudentRepository;
 
 import org.springframework.stereotype.Service;
@@ -54,7 +55,7 @@ public class StudentService {
 
     public StudentResponse getStudentById(Long id) {
 
-        Student student = studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student not found"));
+        Student student = studentRepository.findById(id).orElseThrow(() -> new StudentNotFoundException("Student not found"));
 
         return new StudentResponse(
                 student.getId(),
@@ -67,7 +68,7 @@ public class StudentService {
     public StudentResponse updateStudent(Long id, StudentRequest studentRequest) {
 
         Student student = studentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Student not found"));
+                .orElseThrow(() -> new StudentNotFoundException("Student not found"));
 
         student.setName(studentRequest.getName());
         student.setEmail(studentRequest.getEmail());
@@ -86,7 +87,7 @@ public class StudentService {
     public void deleteStudent(Long id) {
 
         Student student = studentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Student not found"));
+                .orElseThrow(() -> new StudentNotFoundException("Student not found"));
 
         studentRepository.delete(student);
 

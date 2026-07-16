@@ -1,5 +1,7 @@
 package com.example.studentmanagement.controller;
 
+import jakarta.validation.Valid;
+
 import com.example.studentmanagement.dto.StudentRequest;
 import com.example.studentmanagement.dto.StudentResponse;
 import com.example.studentmanagement.service.StudentService;
@@ -21,7 +23,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public StudentResponse saveStudent(@RequestBody StudentRequest studentRequest) {
+    public StudentResponse saveStudent(@Valid @RequestBody StudentRequest studentRequest) {
 
         return studentService.saveStudent(studentRequest);
 
